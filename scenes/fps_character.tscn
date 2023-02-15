@@ -28,3 +28,7 @@ shape = SubResource("CylinderShape3D_okep2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.836904, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
+
+[node name="GroundCheck" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+target_position = Vector3(0, -1.5, 0)
