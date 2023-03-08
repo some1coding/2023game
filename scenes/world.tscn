@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cnt6w86tistpe"]
 
 [ext_resource type="PackedScene" uid="uid://dpt8qn66133dc" path="res://scenes/fps_character.tscn" id="1_g2e72"]
-[ext_resource type="PackedScene" uid="uid://i882x5pwh4sd" path="res://assets/models/test_map.gltf" id="2_46u2b"]
+[ext_resource type="PackedScene" uid="uid://bgrfmk5g7f2kl" path="res://assets/models/test_map.gltf" id="2_46u2b"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tcm0l"]
 
@@ -24,7 +24,7 @@ transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75
 shadow_enabled = true
 
 [node name="FPS Character" parent="." instance=ExtResource("1_g2e72")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2352, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.528, 2.7629, 0)
 
 [node name="test_map" parent="." instance=ExtResource("2_46u2b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.3423, 0, -0.598455)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.3512, 0, -4.11996)
