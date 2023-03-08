@@ -27,4 +27,4 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.528, 2.7629, 0)
 
 [node name="test_map" parent="." instance=ExtResource("2_46u2b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.3512, 0, -4.11996)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.8024, 0, -1.1833)
