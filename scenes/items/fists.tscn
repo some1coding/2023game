@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbf1oju2kd867"]
+
+[ext_resource type="Script" path="res://scripts/resources/item_instance_3d.gd" id="1_up36c"]
+[ext_resource type="Resource" uid="uid://qavkseknc3lo" path="res://data/item_data/fists.tres" id="2_dvs2r"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ugcfo"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="Fists" type="Node3D"]
+script = ExtResource("1_up36c")
+item_data = ExtResource("2_dvs2r")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_ugcfo")

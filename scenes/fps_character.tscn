@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://FPS Character.gd" id="1_g8mxv"]
 [ext_resource type="Script" path="res://scenes/interactRay.gd" id="2_1i5rd"]
-[ext_resource type="Texture2D" uid="uid://bu23gyiesdhyu" path="res://assets/textures/20083.png" id="3_0iiq1"]
+[ext_resource type="Texture2D" uid="uid://bu23gyiesdhyu" path="res://data/textures/20083.png" id="3_0iiq1"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_bb3n0"]
 height = 3.0

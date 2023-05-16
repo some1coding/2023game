@@ -1,30 +1,49 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnt6w86tistpe"]
+[gd_scene load_steps=9 format=3 uid="uid://ceh01r8pyftte"]
 
-[ext_resource type="PackedScene" uid="uid://dpt8qn66133dc" path="res://scenes/fps_character.tscn" id="1_g2e72"]
-[ext_resource type="PackedScene" uid="uid://bgrfmk5g7f2kl" path="res://assets/models/test_map.gltf" id="2_46u2b"]
+[ext_resource type="PackedScene" uid="uid://kqsxuguvtlfw" path="res://scenes/player.tscn" id="1_y2pk6"]
+[ext_resource type="PackedScene" uid="uid://dnr147v6m4tsk" path="res://scenes/projectile_manager.tscn" id="2_4ne08"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tcm0l"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cnvxc"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 
-[sub_resource type="Sky" id="Sky_82us3"]
-sky_material = SubResource("ProceduralSkyMaterial_tcm0l")
+[sub_resource type="Sky" id="Sky_cs1bb"]
+sky_material = SubResource("ProceduralSkyMaterial_cnvxc")
 
-[sub_resource type="Environment" id="Environment_n1c4b"]
+[sub_resource type="Environment" id="Environment_754ug"]
 background_mode = 2
-sky = SubResource("Sky_82us3")
+sky = SubResource("Sky_cs1bb")
 tonemap_mode = 2
-glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_er5fw"]
+size = Vector3(60, 1, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3kjaj"]
+albedo_color = Color(0.176471, 0.176471, 0.176471, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3pp4y"]
+material = SubResource("StandardMaterial3D_3kjaj")
+size = Vector3(60, 1, 20)
 
 [node name="World" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_n1c4b")
+environment = SubResource("Environment_754ug")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 8.63089, 0)
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
 
-[node name="FPS Character" parent="." instance=ExtResource("1_g2e72")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.528, 2.7629, 0)
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 
-[node name="test_map" parent="." instance=ExtResource("2_46u2b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.8024, 0, -1.1833)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_er5fw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_3pp4y")
+
+[node name="Player" parent="." instance=ExtResource("1_y2pk6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23483, -1.19209e-07, -1.84415)
+
+[node name="ProjectileManager" parent="." instance=ExtResource("2_4ne08")]

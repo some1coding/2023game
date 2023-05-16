@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6x1qfrrt0fh4"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_i46ri"]
+
+[node name="MuzzleFlash" type="GPUParticles3D"]
+process_material = SubResource("ParticleProcessMaterial_i46ri")

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="GunData" load_steps=3 format=3 uid="uid://dr3ejjjp7dmtq"]
+
+[ext_resource type="PackedScene" uid="uid://42mn0hqs3ak7" path="res://scenes/projectiles/bullet.tscn" id="1_ondsc"]
+[ext_resource type="Script" path="res://scripts/resources/gun_data.gd" id="1_p2lcr"]
+
+[resource]
+script = ExtResource("1_p2lcr")
+is_automatic = false
+max_extra_ammo = 120
+current_extra_ammo = 120
+max_clip_ammo = 30
+current_clip_ammo = 30
+damage = 15
+rate_of_fire = 3.0
+projectiles_per_shot = 1
+projectile_speed = 1.0
+randomness = 0.5
+raycast_distance = 5
+projectile_scene = ExtResource("1_ondsc")
+item_name = "AK-47"
+can_be_dropped = true
+slot_type = "Primary"

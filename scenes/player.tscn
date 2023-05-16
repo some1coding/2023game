@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://kqsxuguvtlfw"]
+
+[ext_resource type="Script" path="res://scripts/player/player.gd" id="1_gt8i6"]
+[ext_resource type="PackedScene" uid="uid://daej5ouv6hbf7" path="res://scenes/player_ui.tscn" id="2_ptk7f"]
+[ext_resource type="PackedScene" uid="uid://dbf1oju2kd867" path="res://scenes/items/fists.tscn" id="3_fwub4"]
+[ext_resource type="PackedScene" uid="uid://dppv2eu1wpv64" path="res://scenes/items/ak_47.tscn" id="3_lcq1y"]
+[ext_resource type="Script" path="res://scripts/player/item_manager.gd" id="3_uitb4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_c06xs"]
+radius = 0.3
+height = 1.8
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_4hpr4"]
+radius = 0.3
+height = 1.8
+
+[node name="Player" type="CharacterBody3D"]
+wall_min_slide_angle = 0.0
+floor_stop_on_slope = false
+script = ExtResource("1_gt8i6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_c06xs")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+mesh = SubResource("CapsuleMesh_4hpr4")
+skeleton = NodePath("../..")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+top_level = true
+fov = 90.0
+near = 0.04
+far = 2000.0
+
+[node name="Hands" type="Node3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.400573, -0.343266, -0.464964)
+script = ExtResource("3_uitb4")
+
+[node name="Fists" parent="Camera3D/Hands" instance=ExtResource("3_fwub4")]
+
+[node name="AK47" parent="Camera3D/Hands" instance=ExtResource("3_lcq1y")]
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+target_position = Vector3(0, 0, -1000)
+collide_with_areas = true
+
+[node name="PlayerUI" parent="." instance=ExtResource("2_ptk7f")]

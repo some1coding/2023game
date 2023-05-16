@@ -1,0 +1,61 @@
+[gd_resource type="Animation" format=3 uid="uid://bcbdwx6qmq2cv"]
+
+[resource]
+resource_name = "fire"
+length = 0.708333
+tracks/0/type = "position_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("ak_armature/Skeleton3D:body")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 4.91609e-09, 0.0750614, -0.11468, 0.0666667, 1, 2.35144e-08, 0.0750616, 0.147359, 0.1, 1, 1.40446e-08, 0.0750616, 0.199242, 0.133333, 1, 7.51207e-09, 0.0750616, 0.162557, 0.166667, 1, -4.05991e-09, 0.0750616, 0.0975712, 0.2, 1, -1.78716e-08, 0.0750615, 0.0200078, 0.233333, 1, -3.00036e-08, 0.0750614, -0.0481222, 0.266667, 1, -1.95073e-08, 0.0750614, -0.0942409, 0.3, 1, 4.91609e-09, 0.0750614, -0.11468, 0.708333, 1, 4.91609e-09, 0.0750614, -0.11468)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("ak_armature/Skeleton3D:body")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -0.5, 0.5, -0.5, 0.5, 0.0666667, 1, -0.4495, 0.548135, -0.476426, 0.520112, 0.1, 1, -0.440491, 0.556472, -0.471063, 0.523839, 0.133333, 1, -0.451111, 0.547553, -0.473807, 0.52172, 0.166667, 1, -0.469516, 0.531258, -0.47864, 0.517904, 0.2, 1, -0.491033, 0.511251, -0.484097, 0.512991, 0.233333, 1, -0.509525, 0.493282, -0.488545, 0.508312, 0.266667, 1, -0.521817, 0.480923, -0.491367, 0.504954, 0.3, 1, -0.5269, 0.47568, -0.492656, 0.503384, 0.333333, 1, -0.525705, 0.476788, -0.493001, 0.503247, 0.366667, 1, -0.522628, 0.47963, -0.493881, 0.502887, 0.4, 1, -0.518692, 0.483241, -0.49499, 0.502416, 0.433333, 1, -0.514265, 0.487267, -0.496215, 0.50187, 0.466667, 1, -0.509723, 0.491361, -0.497447, 0.501293, 0.5, 1, -0.505448, 0.49518, -0.498583, 0.500734, 0.533333, 1, -0.502311, 0.497962, -0.499403, 0.500314, 0.566667, 1, -0.50061, 0.499463, -0.499843, 0.500083, 0.708333, 1, -0.5, 0.5, -0.5, 0.5)
+tracks/2/type = "position_3d"
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/path = NodePath("ak_armature/Skeleton3D:bolt")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.0175958, -0.108389, -1.82555e-08, 0.0666667, 1, 0.0175958, -0.177297, -1.79994e-08, 0.1, 1, 0.0175958, -0.177297, -1.77433e-08, 0.166667, 1, 0.0175958, -0.108389, -1.81464e-08, 0.708333, 1, 0.0175958, -0.108389, -1.82555e-08)
+tracks/3/type = "position_3d"
+tracks/3/imported = true
+tracks/3/enabled = true
+tracks/3/path = NodePath("ak_armature/Skeleton3D:mag")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0.0206124, -0.108233, -1.88677e-08)
+tracks/4/type = "rotation_3d"
+tracks/4/imported = true
+tracks/4/enabled = true
+tracks/4/path = NodePath("ak_armature/Skeleton3D:mag")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0.411462, 0.575064, -0.411463, 0.575064)
+tracks/5/type = "rotation_3d"
+tracks/5/imported = true
+tracks/5/enabled = true
+tracks/5/path = NodePath("ak_armature/Skeleton3D:mag release")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, -0.413983, -0.492546, -0.492545, 0.586017)
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"fire_projectile"
+}]
+}

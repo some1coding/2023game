@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://42mn0hqs3ak7"]
+
+[ext_resource type="Script" path="res://scripts/resources/projectile_instance_3d.gd" id="1_vyaev"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kobl1"]
+emission_enabled = true
+emission = Color(0.917647, 0.32549, 0, 1)
+emission_energy_multiplier = 8.0
+disable_receive_shadows = true
+grow_amount = -0.706
+
+[sub_resource type="BoxMesh" id="BoxMesh_q0jar"]
+material = SubResource("StandardMaterial3D_kobl1")
+size = Vector3(0.05, 0.05, 0.5)
+
+[node name="Bullet" type="MeshInstance3D"]
+mesh = SubResource("BoxMesh_q0jar")
+script = ExtResource("1_vyaev")

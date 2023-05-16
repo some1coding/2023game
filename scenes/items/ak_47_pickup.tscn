@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6o34dfqi5uxt"]
+
+[ext_resource type="Script" path="res://scripts/resources/item_pickup_3d.gd" id="1_167hv"]
+[ext_resource type="ArrayMesh" uid="uid://c261ucnj47lj5" path="res://data/meshes/items/ak_47_mesh.res" id="2_ivwbh"]
+[ext_resource type="Resource" uid="uid://dr3ejjjp7dmtq" path="res://data/item_data/ak_47.tres" id="2_ug7vs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jecjp"]
+size = Vector3(3.33567, 1.09383, 0.430081)
+
+[node name="AK47Pickup" type="RigidBody3D"]
+script = ExtResource("1_167hv")
+item_data = ExtResource("2_ug7vs")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_ivwbh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.149005, -0.111753, 0)
+shape = SubResource("BoxShape3D_jecjp")
+
+[connection signal="sleeping_state_changed" from="." to="." method="_on_sleeping_state_changed"]
