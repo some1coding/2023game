@@ -50,6 +50,7 @@ var offset_velocity := Vector3.ZERO
 @onready var collider: CollisionShape3D = $CollisionShape3D
 @onready var ui = $PlayerUI
 @onready var item_manager = $Camera3D/Hands
+@onready var pause_menu = $Camera3D/Menu
 #@onready var raycast = $Camera3D/RayCast3D
 
 func _ready() -> void:
@@ -71,6 +72,9 @@ func _process(delta: float) -> void:
 	#print("cap" + str(tween.is_running()))
 
 func _input(event: InputEvent) -> void:
+	if pause_menu.visible:
+		return
+	
 	# Only look around if the mouse is invisible.
 	if event is InputEventMouseMotion:
 		var relative_mouse_motion: Vector2 = event.relative
@@ -98,21 +102,31 @@ func _input(event: InputEvent) -> void:
 
 func handle_input() -> void:
 	# Items and stuff.
-	if Input.is_action_pressed("fire"):
-		item_manager.request_action("fire")
-	if Input.is_action_just_released("fire"):
-		item_manager.request_action("fire_stop")
+	if not pause_menu.visible:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
-	if Input.is_action_just_pressed("fire_2"):
-		item_manager.request_action("fire_2")
-	if Input.is_action_just_released("fire_2"):
-		item_manager.request_action("fire_2_stop")
-	
-	if Input.is_action_just_pressed("drop_item"):
-		item_manager.request_action("drop_item")
-	
-	if Input.is_action_just_pressed("reload"):
-		item_manager.request_action("reload")
+		if Input.is_action_pressed("fire"):
+			item_manager.request_action("fire")
+		if Input.is_action_just_released("fire"):
+			item_manager.request_action("fire_stop")
+		
+		if Input.is_action_just_pressed("fire_2"):
+			item_manager.request_action("fire_2")
+		if Input.is_action_just_released("fire_2"):
+			item_manager.request_action("fire_2_stop")
+		
+		if Input.is_action_just_pressed("drop_item"):
+			item_manager.request_action("drop_item")
+		
+		if Input.is_action_just_pressed("reload"):
+			item_manager.request_action("reload")
+
+	else:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
+	if Input.is_action_just_pressed("ui_cancel"):
+		pause_menu.visible = not pause_menu.visible	
+
 
 func _physics_process(delta: float) -> void:
 	

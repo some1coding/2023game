@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dpt8qn66133dc"]
+[gd_scene load_steps=8 format=3 uid="uid://dpt8qn66133dc"]
 
 [ext_resource type="Script" path="res://FPS Character.gd" id="1_g8mxv"]
 [ext_resource type="Script" path="res://scenes/interactRay.gd" id="2_1i5rd"]
+[ext_resource type="PackedScene" uid="uid://d17re12cfcvrh" path="res://scenes/ui/pause_menu.tscn" id="2_pw3j3"]
 [ext_resource type="Texture2D" uid="uid://bu23gyiesdhyu" path="res://data/textures/20083.png" id="3_0iiq1"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_bb3n0"]
@@ -30,6 +31,9 @@ shape = SubResource("CylinderShape3D_okep2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.836904, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
+
+[node name="Menu" parent="Head/Camera3D" instance=ExtResource("2_pw3j3")]
+visible = false
 
 [node name="InteractRay" type="RayCast3D" parent="Head"]
 target_position = Vector3(0, 0, -4)

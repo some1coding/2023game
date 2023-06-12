@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://kqsxuguvtlfw"]
+[gd_scene load_steps=9 format=3 uid="uid://kqsxuguvtlfw"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_gt8i6"]
 [ext_resource type="PackedScene" uid="uid://daej5ouv6hbf7" path="res://scenes/player_ui.tscn" id="2_ptk7f"]
 [ext_resource type="PackedScene" uid="uid://dbf1oju2kd867" path="res://scenes/items/fists.tscn" id="3_fwub4"]
 [ext_resource type="PackedScene" uid="uid://dppv2eu1wpv64" path="res://scenes/items/ak_47.tscn" id="3_lcq1y"]
 [ext_resource type="Script" path="res://scripts/player/item_manager.gd" id="3_uitb4"]
+[ext_resource type="PackedScene" uid="uid://d17re12cfcvrh" path="res://scenes/ui/pause_menu.tscn" id="5_yy56n"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_c06xs"]
 radius = 0.3
@@ -44,5 +45,8 @@ script = ExtResource("3_uitb4")
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
 target_position = Vector3(0, 0, -1000)
 collide_with_areas = true
+
+[node name="Menu" parent="Camera3D" instance=ExtResource("5_yy56n")]
+visible = false
 
 [node name="PlayerUI" parent="." instance=ExtResource("2_ptk7f")]

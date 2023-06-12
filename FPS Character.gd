@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 @onready var head = $Head
 @onready var ground_check = $GroundCheck
+@onready var pause_menu = $Head/Camera3D/Menu
 
 var speed = 10
 var h_accelaration = 6
@@ -22,10 +23,17 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _input(event):
+	if event == "pause_menu":
+		print("notongfrfrau")
+	print(event)
+	
 	if event is InputEventMouseMotion:
 		rotate_y(deg_to_rad(-event.relative.x * mouse_sensitivity))
 		head.rotate_x(deg_to_rad(-event.relative.y * mouse_sensitivity))
 		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-89), deg_to_rad(89))
+
+		
+		
 
 func _physics_process(delta):
 	
@@ -49,9 +57,9 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump") and (is_on_floor() or ground_check.is_colliding()):
 		gravity_vec = Vector3.UP * jump 
 	
-	if Input.is_action_pressed("move_forward"):
+	if Input.is_action_pressed("move_forwards"):
 		direction -= transform.basis.z
-	elif Input.is_action_pressed("move_backward"):
+	elif Input.is_action_pressed("move_backwards"):
 		direction+= transform.basis.z
 	if Input.is_action_pressed("move_left"):
 		direction -= transform.basis.x
@@ -67,4 +75,7 @@ func _physics_process(delta):
 	set_velocity(movement)
 
 	move_and_slide()
-
+	
+	#if Input.is_action_pressed("ui_cancel"):
+		#print("ranga")
+		#pause_menu.show()	
