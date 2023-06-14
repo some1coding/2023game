@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d17re12cfcvrh"]
+[gd_scene load_steps=3 format=3 uid="uid://d17re12cfcvrh"]
 
 [ext_resource type="Script" path="res://Menu.gd" id="1_82u42"]
+[ext_resource type="Texture2D" uid="uid://dkmfbekbl5suq" path="res://data/textures/PAUSEMENU.png" id="2_h53ld"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -10,6 +11,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_82u42")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 1.0
+offset_right = 1153.0
+offset_bottom = 649.0
+texture = ExtResource("2_h53ld")
+expand_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://ceh01r8pyftte"]
+[gd_scene load_steps=11 format=3 uid="uid://ceh01r8pyftte"]
 
 [ext_resource type="PackedScene" uid="uid://kqsxuguvtlfw" path="res://scenes/player.tscn" id="1_y2pk6"]
 [ext_resource type="PackedScene" uid="uid://dnr147v6m4tsk" path="res://scenes/projectile_manager.tscn" id="2_4ne08"]
 [ext_resource type="PackedScene" uid="uid://cj3hg1abpn4ig" path="res://data/models/crate.glb" id="3_jiv5r"]
+[ext_resource type="PackedScene" uid="uid://d1fi5xyf1enoa" path="res://data/models/coromandel.glb" id="4_14c6h"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cnvxc"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -15,6 +16,10 @@ sky_material = SubResource("ProceduralSkyMaterial_cnvxc")
 background_mode = 2
 sky = SubResource("Sky_cs1bb")
 tonemap_mode = 2
+fog_enabled = true
+fog_light_color = Color(0.376471, 0.568627, 0.756863, 1)
+fog_density = 0.0005
+fog_sky_affect = 0.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_er5fw"]
 size = Vector3(60, 1, 20)
@@ -42,12 +47,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("BoxShape3D_er5fw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(0.411149, 0, -0.911568, 0, 1, 0, 0.911568, 0, 0.411149, 18.5533, 0, 0)
 mesh = SubResource("BoxMesh_3pp4y")
 
 [node name="Player" parent="." instance=ExtResource("1_y2pk6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23483, -1.19209e-07, -1.84415)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.8815, -1.19209e-07, -1.84415)
 
 [node name="ProjectileManager" parent="." instance=ExtResource("2_4ne08")]
 
 [node name="crate" parent="." instance=ExtResource("3_jiv5r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.973738, 0.977754, 2.68049)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.516, 0.977754, 2.68049)
+
+[node name="coromandel" parent="." instance=ExtResource("4_14c6h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 991.21, -18.8202, 396.406)
