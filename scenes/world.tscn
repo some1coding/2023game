@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://kqsxuguvtlfw" path="res://scenes/player.tscn" id="1_y2pk6"]
 [ext_resource type="PackedScene" uid="uid://dnr147v6m4tsk" path="res://scenes/projectile_manager.tscn" id="2_4ne08"]
 [ext_resource type="PackedScene" uid="uid://cj3hg1abpn4ig" path="res://data/models/crate.glb" id="3_jiv5r"]
-[ext_resource type="PackedScene" uid="uid://d1fi5xyf1enoa" path="res://data/models/coromandel.glb" id="4_14c6h"]
+[ext_resource type="PackedScene" uid="uid://c82opypjw6gg2" path="res://data/models/coromandel.tscn" id="4_7yhuc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cnvxc"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -58,5 +58,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.8815, -1.19209e-07, -1.844
 [node name="crate" parent="." instance=ExtResource("3_jiv5r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.516, 0.977754, 2.68049)
 
-[node name="coromandel" parent="." instance=ExtResource("4_14c6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 991.21, -18.8202, 396.406)
+[node name="coromandel" parent="." instance=ExtResource("4_7yhuc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 780.859, -40.0012, 12.132)

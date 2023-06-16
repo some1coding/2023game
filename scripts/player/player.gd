@@ -154,8 +154,6 @@ func process_camera_rotation(relative_mouse_motion) -> void:
 			camera_lower_clamp_rad,
 			camera_upper_clamp_rad)
 	
-	# Rotate head independently of body.
-	# This camera also determines the local direction of WASD.
 	camera.rotation.x = mouse_rotation.x
 	camera.rotation.y = mouse_rotation.y
 
