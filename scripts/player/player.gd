@@ -22,6 +22,9 @@ const CAMERA_LOWER_CLAMP: float = -90.0
 
 enum MovementStates{ON_GROUND, IN_AIR}
 
+# Saving, this value is read from the 'current_save.txt' file.
+var name_of_current_save_file: String = ""
+
 # Camera.
 var mouse_rotation := Vector3.ZERO
 var camera_upper_clamp_rad: float # These two are the ones used to clamp the vertical look direction.
@@ -50,7 +53,6 @@ var offset_velocity := Vector3.ZERO
 @onready var collider: CollisionShape3D = $CollisionShape3D
 @onready var ui = $PlayerUI
 @onready var item_manager = $Camera3D/Hands
-@onready var pause_menu = $Camera3D/Menu
 #@onready var raycast = $Camera3D/RayCast3D
 
 func _ready() -> void:
@@ -72,9 +74,6 @@ func _process(delta: float) -> void:
 	#print("cap" + str(tween.is_running()))
 
 func _input(event: InputEvent) -> void:
-	if pause_menu.visible:
-		return
-	
 	# Only look around if the mouse is invisible.
 	if event is InputEventMouseMotion:
 		var relative_mouse_motion: Vector2 = event.relative
@@ -99,33 +98,50 @@ func _input(event: InputEvent) -> void:
 					item_manager.next_item()
 				MOUSE_BUTTON_WHEEL_DOWN:
 					item_manager.previous_item()
+					
 
 func handle_input() -> void:
 	# Items and stuff.
-	if not pause_menu.visible:
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+	if Input.is_action_pressed("fire"):
+		item_manager.request_action("fire")
+	if Input.is_action_just_released("fire"):
+		item_manager.request_action("fire_stop")
 	
-		if Input.is_action_pressed("fire"):
-			item_manager.request_action("fire")
-		if Input.is_action_just_released("fire"):
-			item_manager.request_action("fire_stop")
+	if Input.is_action_just_pressed("fire_2"):
+		item_manager.request_action("fire_2")
+	if Input.is_action_just_released("fire_2"):
+		item_manager.request_action("fire_2_stop")
+	
+	if Input.is_action_just_pressed("drop_item"):
+		item_manager.request_action("drop_item")
+	
+	if Input.is_action_just_pressed("reload"):
+		item_manager.request_action("reload")
+	
+	if Input.is_action_just_pressed("save"):
+		var file_that_contains_save_name = FileAccess.open("user://current_save.txt", FileAccess.READ)
+		name_of_current_save_file = file_that_contains_save_name.get_as_text()
 		
-		if Input.is_action_just_pressed("fire_2"):
-			item_manager.request_action("fire_2")
-		if Input.is_action_just_released("fire_2"):
-			item_manager.request_action("fire_2_stop")
+		# the get_as_text function adds an enter character to the end of the string
+		# we will get an error if we try to access a directory with an enter key
+		name_of_current_save_file = name_of_current_save_file.strip_edges()
 		
-		if Input.is_action_just_pressed("drop_item"):
-			item_manager.request_action("drop_item")
+		file_that_contains_save_name.close()
 		
-		if Input.is_action_just_pressed("reload"):
-			item_manager.request_action("reload")
+		var save_file = FileAccess.open("user://saves/" + str(name_of_current_save_file) + ".txt", FileAccess.WRITE)
+		
+		
+		
+		save_file.store_line(name_of_current_save_file)
+		
+		
+		
+		
+		save_file.close()
 
-	else:
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-
-	if Input.is_action_just_pressed("ui_cancel"):
-		pause_menu.visible = not pause_menu.visible	
+	
 
 
 func _physics_process(delta: float) -> void:

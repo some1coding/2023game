@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cj3is6gp2uw3o"]
+[gd_scene load_steps=5 format=3 uid="uid://dq6rtn7fnkc50"]
 
-[ext_resource type="Script" path="res://Menu.gd" id="1_hci8i"]
-[ext_resource type="Texture2D" uid="uid://wvqu6nfsysrj" path="res://icon.png" id="2_6ekgx"]
+[ext_resource type="Script" path="res://menu.gd" id="1_q5jg0"]
+[ext_resource type="Texture2D" uid="uid://c1d1gfa7nah1" path="res://data/textures/menu (1).png" id="2_4hmlr"]
+[ext_resource type="AudioStream" uid="uid://bfa447jhvlf3e" path="res://data/Audio/Salvation-Inspiring-Uplifting-Orchestra.mp3" id="2_b02hv"]
+[ext_resource type="FontFile" uid="uid://27u2h57neu4q" path="res://data/fonts/Plane Crash.ttf" id="4_3j2uv"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -10,7 +12,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_hci8i")
+script = ExtResource("1_q5jg0")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_b02hv")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -20,38 +25,93 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-texture = ExtResource("2_6ekgx")
+texture = ExtResource("2_4hmlr")
 expand_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -35.0
-offset_top = -50.5
-offset_right = 35.0
-offset_bottom = 50.5
+anchors_preset = -1
+anchor_left = 0.47
+anchor_top = 0.275
+anchor_right = 0.552
+anchor_bottom = 0.435
+offset_left = -0.440063
+offset_top = -0.199997
+offset_right = 0.0959473
+offset_bottom = 0.119965
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="Play" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(1, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(1, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_3j2uv")
+text = "play"
 
-[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Options" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Play"
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(1, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(1, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_3j2uv")
+text = "options"
 
-[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Options"
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(1, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(1, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_3j2uv")
+text = "exit"
 
-[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Load" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Exit"
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(1, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(1, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_3j2uv")
+text = "load"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Load" to="." method="_on_load_pressed"]

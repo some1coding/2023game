@@ -3,55 +3,32 @@
 [ext_resource type="Script" path="res://scripts/utility/options_menu.gd" id="1_ug4mb"]
 [ext_resource type="Texture2D" uid="uid://wvqu6nfsysrj" path="res://icon.png" id="2_dfqy4"]
 
-[node name="Menu" type="Control"]
-layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_ug4mb")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
+[node name="Menu" type="MarginContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1318.0
-offset_top = -886.0
-offset_right = 1158.0
-offset_bottom = 865.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ug4mb")
+metadata/_edit_vertical_guides_ = []
+metadata/_edit_horizontal_guides_ = []
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
 texture = ExtResource("2_dfqy4")
-expand_mode = 2
+expand_mode = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -33.5
-offset_top = -33.0
-offset_right = 33.5
-offset_bottom = 33.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 4
 
-[node name="Volume" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Volume" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Volume"
 
-[node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="HSlider" type="HSlider" parent="VBoxContainer/Volume"]
 layout_mode = 2
-text = "Back"
-
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
+offset_top = 35.0
+offset_right = 67.0
+offset_bottom = 51.0
