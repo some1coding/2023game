@@ -1,10 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://ceh01r8pyftte"]
+[gd_scene load_steps=10 format=3 uid="uid://ceh01r8pyftte"]
 
 [ext_resource type="Script" path="res://scenes/world.gd" id="1_s203m"]
 [ext_resource type="PackedScene" uid="uid://kqsxuguvtlfw" path="res://scenes/player.tscn" id="1_y2pk6"]
 [ext_resource type="PackedScene" uid="uid://dnr147v6m4tsk" path="res://scenes/projectile_manager.tscn" id="2_4ne08"]
 [ext_resource type="PackedScene" uid="uid://cj3hg1abpn4ig" path="res://data/models/crate.glb" id="3_jiv5r"]
-[ext_resource type="PackedScene" uid="uid://c82opypjw6gg2" path="res://data/models/coromandel.tscn" id="4_7yhuc"]
+[ext_resource type="PackedScene" uid="uid://c300654hmqol1" path="res://data/models/coromandelimproved.glb" id="6_sa3va"]
 [ext_resource type="PackedScene" uid="uid://y00652f7x1ul" path="res://scenes/ui/pause_menu.tscn" id="6_xo6fh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cnvxc"]
@@ -23,16 +23,6 @@ fog_light_color = Color(0.376471, 0.568627, 0.756863, 1)
 fog_density = 0.0005
 fog_sky_affect = 0.0
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_er5fw"]
-size = Vector3(60, 1, 20)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3kjaj"]
-albedo_color = Color(0.176471, 0.176471, 0.176471, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_3pp4y"]
-material = SubResource("StandardMaterial3D_3kjaj")
-size = Vector3(60, 1, 20)
-
 [node name="World" type="Node3D"]
 script = ExtResource("1_s203m")
 
@@ -43,27 +33,16 @@ environment = SubResource("Environment_754ug")
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("BoxShape3D_er5fw")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-transform = Transform3D(0.411149, 0, -0.911568, 0, 1, 0, 0.911568, 0, 0.411149, 18.5533, 0, 0)
-mesh = SubResource("BoxMesh_3pp4y")
-
 [node name="Player" parent="." instance=ExtResource("1_y2pk6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.8815, -1.19209e-07, -1.84415)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.8815, 13.1768, -1.84415)
 
 [node name="ProjectileManager" parent="." instance=ExtResource("2_4ne08")]
 
 [node name="crate" parent="." instance=ExtResource("3_jiv5r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.516, 0.977754, 2.68049)
-
-[node name="coromandel" parent="." instance=ExtResource("4_7yhuc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 780.859, -40.0012, 12.132)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.516, 13.6994, 2.68049)
 
 [node name="PauseMenu" parent="." instance=ExtResource("6_xo6fh")]
 process_mode = 3
 visible = false
+
+[node name="coromandelimproved" parent="." instance=ExtResource("6_sa3va")]

@@ -101,13 +101,13 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	match anim_name:
 		"reload":
 			var ammo_needed = item_data.max_clip_ammo - item_data.current_clip_ammo
-
 			if item_data.current_extra_ammo > ammo_needed:
 				item_data.current_clip_ammo = item_data.max_clip_ammo
 				item_data.current_extra_ammo -= ammo_needed
 			else:
 				item_data.current_clip_ammo += item_data.current_extra_ammo
 				item_data.current_extra_ammo = 0
+
 			
 			is_reloading = false
 			EventBus.update_player_ui.emit(item_data)
@@ -115,6 +115,8 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		"fire":
 			is_firing = false
 		
+		
+
 
 func request_fire_stop() -> void:
 	is_firing = false

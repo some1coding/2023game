@@ -14,7 +14,7 @@ height = 1.8
 radius = 0.3
 height = 1.8
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["Persist"]]
 wall_min_slide_angle = 0.0
 floor_stop_on_slope = false
 script = ExtResource("1_gt8i6")

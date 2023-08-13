@@ -130,20 +130,31 @@ func handle_input() -> void:
 		
 		file_that_contains_save_name.close()
 		
+		DirAccess.open("user://").make_dir("saves")
 		var save_file = FileAccess.open("user://saves/" + str(name_of_current_save_file) + ".txt", FileAccess.WRITE)
 		
-		
-		
-		save_file.store_line(name_of_current_save_file)
-		
-		
-		
-		
+		# Now, we can call our save function on each node.
+		var save_nodes = get_tree().get_nodes_in_group("Persist")
+		for node in save_nodes:
+			var save_data: Dictionary = node.save()
+			var json_string = JSON.stringify(save_data)
+			save_file.store_line(json_string)
 		save_file.close()
 
-	
 
+func save() -> Dictionary:
+	var save_dict = {
+		"node_path" : get_path(),
+		"pos_x" : position.x, # Vector2 is not supported by JSON
+		"pos_y" : position.y,
+		"pos_z" : position.z,
+	}
+	return save_dict
 
+func load(data: Dictionary):
+	position.x = data["pos_x"]
+	position.y = data["pos_y"]
+	position.z = data["pos_z"]
 func _physics_process(delta: float) -> void:
 	
 	handle_input()
