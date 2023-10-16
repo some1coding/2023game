@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c7e760hkqkfh4"]
+
+[resource]
+resource_name = "lamp_glass_bump"
+transparency = 1
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.905882, 0.247059, 0.0470588, 0.0313726)
+roughness = 0.5
+emission_enabled = true
+emission = Color(0.759994, 0.0229105, 0, 1)

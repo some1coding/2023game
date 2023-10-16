@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://chbq3ep3ohoc5"]
+
+[ext_resource type="PackedScene" uid="uid://bgq7tl082jbo5" path="res://data/import/coromandel.gltf" id="1_6uyat"]
+[ext_resource type="PackedScene" uid="uid://ym5vyplb58u2" path="res://scenes/player.tscn" id="2_1dqdb"]
+[ext_resource type="Texture2D" uid="uid://cyodrlmlc2c2e" path="res://data/textures/world/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="2_mdalq"]
+[ext_resource type="PackedScene" uid="uid://dnmuweaqihr68" path="res://scenes/corolla.tscn" id="3_s0rug"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_3boax"]
+panorama = ExtResource("2_mdalq")
+
+[sub_resource type="Sky" id="Sky_afnkw"]
+sky_material = SubResource("PanoramaSkyMaterial_3boax")
+
+[sub_resource type="Environment" id="Environment_7my4b"]
+background_mode = 2
+sky = SubResource("Sky_afnkw")
+ambient_light_source = 2
+ambient_light_color = Color(0.113725, 0.176471, 0.223529, 1)
+ambient_light_sky_contribution = 0.04
+tonemap_mode = 2
+fog_enabled = true
+fog_light_color = Color(0.223529, 0.482353, 0.619608, 1)
+fog_density = 0.0002
+fog_sky_affect = 0.0
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5i3n5"]
+
+[node name="coromandel" instance=ExtResource("1_6uyat")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="0"]
+transform = Transform3D(-0.82523, -0.407157, -0.391432, 0.0024198, -0.695591, 0.718434, -0.564792, 0.591926, 0.575007, 0, 504.537, 0)
+light_angular_distance = 1.0
+shadow_enabled = true
+directional_shadow_blend_splits = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="1"]
+environment = SubResource("Environment_7my4b")
+
+[node name="StaticBody3D" parent="coro_detailed" index="0"]
+physics_material_override = SubResource("PhysicsMaterial_5i3n5")
+
+[node name="corolla" parent="." index="6" instance=ExtResource("3_s0rug")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -275.534, 14.1535, -159.084)
+
+[node name="Player" parent="." index="7" node_paths=PackedStringArray("corolla") instance=ExtResource("2_1dqdb")]
+transform = Transform3D(-0.340658, 0, -0.940187, 0, 1, 0, 0.940187, 0, -0.340658, -283.422, 15.2171, -160.721)
+corolla = NodePath("../corolla")

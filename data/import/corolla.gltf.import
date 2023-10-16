@@ -1,0 +1,207 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://dt5s1xrndkl4j"
+path="res://.godot/imported/corolla.gltf-38ad154cfae615c9d4c0bb4cd929e38d.scn"
+
+[deps]
+
+source_file="res://data/import/corolla.gltf"
+dest_files=["res://.godot/imported/corolla.gltf-38ad154cfae615c9d4c0bb4cd929e38d.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name="Scene Root"
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"materials": {
+"Carbon": {
+"use_external/enabled": true,
+"use_external/path": "res://data/materials/car/Carbon.tres"
+},
+"black": {
+"use_external/enabled": true,
+"use_external/path": "res://data/materials/car/black.tres"
+},
+"black.001": {
+"use_external/enabled": true,
+"use_external/path": "res://data/materials/car/black.001.tres"
+},
+"black_m": {
+"use_external/enabled": true,
+"use_external/path": "res://data/materials/car/black_m.tres"
+},
+"black_m.001": {
+"use_external/enabled": true,
+"use_external/path": "res://data/materials/car/black_m.001.tres"
+},
+"body": {
+"use_external/enabled": true,
+"use_external/path": "res://data/materials/car/body.tres"
+},
+"body.001": {
+"use_external/enabled": true,
+"use_external/path": "res://data/materials/car/body.001.tres"
+},
+"chrome": {
+"use_external/enabled": true,
+"use_external/path": "res://data/materials/car/chrome.tres"
+},
+"chrome.001": {
+"use_external/enabled": true,
+"use_external/path": "res://data/materials/car/chrome.001.tres"
+},
+"chrome_bump": {
+"use_external/enabled": true,
+"use_external/path": "res://data/materials/car/chrome_bump.tres"
+},
+"chrome_bump.001": {
+"use_external/enabled": true,
+"use_external/path": "res://data/materials/car/chrome_bump.001.tres"
+},
+"d_glass": {
+"use_external/enabled": true,
+"use_external/path": "res://data/materials/car/d_glass.tres"
+},
+"d_glass.001": {
+"use_external/enabled": true,
+"use_external/path": "res://data/materials/car/d_glass.001.tres"
+},
+"dash": {
+"use_external/enabled": true,
+"use_external/path": "res://data/materials/car/dash.tres"
+},
+"dash.001": {
+"use_external/enabled": true,
+"use_external/path": "res://data/materials/car/dash.001.tres"
+},
+"door": {
+"use_external/enabled": true,
+"use_external/path": "res://data/materials/car/door.tres"
+},
+"door.001": {
+"use_external/enabled": true,
+"use_external/path": "res://data/materials/car/door.001.tres"
+},
+"glass": {
+"use_external/enabled": true,
+"use_external/path": "res://data/materials/car/glass.tres"
+},
+"glass.001": {
+"use_external/enabled": true,
+"use_external/path": "res://data/materials/car/glass.001.tres"
+},
+"gum": {
+"use_external/enabled": true,
+"use_external/path": "res://data/materials/car/gum.tres"
+},
+"gum.001": {
+"use_external/enabled": true,
+"use_external/path": "res://data/materials/car/gum.001.tres"
+},
+"lamp_glass_bump": {
+"use_external/enabled": true,
+"use_external/path": "res://data/materials/car/lamp_glass_bump.tres"
+},
+"lamp_glass_bump.001": {
+"use_external/enabled": true,
+"use_external/path": "res://data/materials/car/lamp_glass_bump.001.tres"
+},
+"orange": {
+"use_external/enabled": true,
+"use_external/path": "res://data/materials/car/orange.tres"
+},
+"orange.001": {
+"use_external/enabled": true,
+"use_external/path": "res://data/materials/car/orange.001.tres"
+},
+"r_glass": {
+"use_external/enabled": true,
+"use_external/path": "res://data/materials/car/r_glass.tres"
+},
+"r_glass.001": {
+"use_external/enabled": true,
+"use_external/path": "res://data/materials/car/r_glass.001.tres"
+},
+"silver.001": {
+"use_external/enabled": true,
+"use_external/path": "res://data/materials/car/silver.001.tres"
+},
+"stwheel": {
+"use_external/enabled": true,
+"use_external/path": "res://data/materials/car/stwheel.tres"
+},
+"stwheel.001": {
+"use_external/enabled": true,
+"use_external/path": "res://data/materials/car/stwheel.001.tres"
+}
+},
+"meshes": {
+"corolla_Toyota Corolla001": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://data/meshes/car/corolla_Toyota Corolla001.res"
+},
+"corolla_Toyota Corolla002": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://data/meshes/car/corolla_Toyota Corolla002.res"
+},
+"corolla_Toyota Corolla004": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://data/meshes/car/corolla_Toyota Corolla004.res"
+},
+"corolla_Toyota Corolla006": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://data/meshes/car/corolla_Toyota Corolla006.res"
+},
+"corolla_Toyota Corolla007": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://data/meshes/car/corolla_Toyota Corolla007.res"
+}
+}
+}
+gltf/embedded_image_handling=1

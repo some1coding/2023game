@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dq6rtn7fnkc50"]
+[gd_scene load_steps=5 format=3 uid="uid://cbanqctg2cfti"]
 
-[ext_resource type="Script" path="res://menu.gd" id="1_q5jg0"]
+[ext_resource type="Script" path="res://scripts/ui/menu.gd" id="1_o4v3s"]
 [ext_resource type="Texture2D" uid="uid://c1d1gfa7nah1" path="res://data/textures/menu (1).png" id="2_4hmlr"]
-[ext_resource type="AudioStream" uid="uid://bfa447jhvlf3e" path="res://data/Audio/Salvation-Inspiring-Uplifting-Orchestra.mp3" id="2_b02hv"]
+[ext_resource type="AudioStream" uid="uid://bfa447jhvlf3e" path="res://data/audio/Salvation-Inspiring-Uplifting-Orchestra.mp3" id="2_naepi"]
 [ext_resource type="FontFile" uid="uid://27u2h57neu4q" path="res://data/fonts/Plane Crash.ttf" id="4_3j2uv"]
 
 [node name="Menu" type="Control"]
@@ -12,10 +12,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_q5jg0")
+script = ExtResource("1_o4v3s")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_b02hv")
+stream = ExtResource("2_naepi")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -43,7 +43,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 
-[node name="Play" type="Button" parent="VBoxContainer"]
+[node name="Singleplayer" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
@@ -58,7 +58,7 @@ theme_override_colors/icon_hover_pressed_color = Color(1, 0, 0, 1)
 theme_override_colors/icon_focus_color = Color(1, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_3j2uv")
-text = "play"
+text = "singleplayer"
 
 [node name="Options" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -94,24 +94,6 @@ theme_override_colors/icon_disabled_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_3j2uv")
 text = "exit"
 
-[node name="Load" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(1, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(1, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(1, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(1, 0, 0, 1)
-theme_override_colors/icon_hover_color = Color(1, 0, 0, 1)
-theme_override_colors/icon_hover_pressed_color = Color(1, 0, 0, 1)
-theme_override_colors/icon_focus_color = Color(1, 0, 0, 1)
-theme_override_colors/icon_disabled_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_3j2uv")
-text = "load"
-
-[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Singleplayer" to="." method="_on_singleplayer_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="VBoxContainer/Load" to="." method="_on_load_pressed"]

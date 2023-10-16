@@ -1,0 +1,93 @@
+[gd_scene load_steps=8 format=3 uid="uid://dnmuweaqihr68"]
+
+[ext_resource type="Script" path="res://scripts/player/corolla.gd" id="1_2wvlx"]
+[ext_resource type="ArrayMesh" uid="uid://c0my8yrye3eoq" path="res://data/meshes/car/corolla_Toyota Corolla002.res" id="2_c32ia"]
+[ext_resource type="ArrayMesh" uid="uid://brqt6llrx48pb" path="res://data/meshes/car/corolla_Toyota Corolla001.res" id="3_eox73"]
+[ext_resource type="ArrayMesh" uid="uid://1fi20fprejtv" path="res://data/meshes/car/corolla_Toyota Corolla004.res" id="4_eyy8c"]
+[ext_resource type="ArrayMesh" uid="uid://dstqtnl4u8k8k" path="res://data/meshes/car/corolla_Toyota Corolla006.res" id="5_hbcj2"]
+[ext_resource type="ArrayMesh" uid="uid://bhh143f5di0od" path="res://data/meshes/car/corolla_Toyota Corolla007.res" id="6_83iqj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ssxo8"]
+size = Vector3(2.14304, 1.36582, 4.75702)
+
+[node name="corolla" type="VehicleBody3D"]
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, 0.402229, -0.3171)
+gravity_scale = 2.0
+brake = 0.25
+script = ExtResource("1_2wvlx")
+
+[node name="CarBody" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_c32ia")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.887849, 0)
+shape = SubResource("BoxShape3D_ssxo8")
+
+[node name="FrontLeft" type="VehicleWheel3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.908076, 0.479938, -1.53947)
+brake = 0.25
+use_as_traction = true
+use_as_steering = true
+wheel_roll_influence = 0.05
+wheel_friction_slip = 1.4
+suspension_travel = 0.1
+suspension_stiffness = 80.0
+
+[node name="Mesh" type="MeshInstance3D" parent="FrontLeft"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+mesh = ExtResource("3_eox73")
+skeleton = NodePath("")
+
+[node name="RearLeft" type="VehicleWheel3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.908076, 0.43732, 1.50905)
+brake = 0.25
+wheel_roll_influence = 0.01
+wheel_friction_slip = 1.4
+suspension_travel = 0.1
+suspension_stiffness = 80.0
+
+[node name="Mesh" type="MeshInstance3D" parent="RearLeft"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+mesh = ExtResource("4_eyy8c")
+skeleton = NodePath("")
+
+[node name="FrontRight" type="VehicleWheel3D" parent="."]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0.926132, 0.479938, -1.57813)
+brake = 0.25
+use_as_traction = true
+use_as_steering = true
+wheel_roll_influence = 0.05
+wheel_friction_slip = 1.4
+suspension_travel = 0.1
+suspension_stiffness = 80.0
+
+[node name="Mesh" type="MeshInstance3D" parent="FrontRight"]
+mesh = ExtResource("5_hbcj2")
+skeleton = NodePath("")
+
+[node name="RearRight" type="VehicleWheel3D" parent="."]
+transform = Transform3D(-1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 0.926132, 0.43732, 1.47039)
+brake = 0.25
+wheel_roll_influence = 0.01
+wheel_friction_slip = 1.4
+suspension_travel = 0.1
+suspension_stiffness = 80.0
+
+[node name="Mesh" type="MeshInstance3D" parent="RearRight"]
+mesh = ExtResource("6_83iqj")
+skeleton = NodePath("")
+
+[node name="CenterOfMass" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.402229, -0.3171)
+
+[node name="CameraPivot" type="Node3D" parent="."]
+top_level = true
+
+[node name="ReverseCamera" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(-0.999999, 0.0017453, 8.13285e-08, 0.00170461, 0.976675, 0.214718, 0.000374668, 0.214718, -0.976676, 0, 2.59222, -4.52688)
+
+[node name="ForwardCamera" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 0.884581, 0.466387, 0, -0.466387, 0.884581, 0, 4.76219, 6.15625)
+current = true

@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bqkqluq1k8jql"]
+
+[resource]
+resource_name = "glass"
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.278431, 0.278431, 0.278431, 0.223529)
+roughness = 0.222222
+refraction_scale = 0.25

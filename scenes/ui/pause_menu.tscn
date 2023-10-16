@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://y00652f7x1ul"]
+[gd_scene load_steps=3 format=3 uid="uid://cvxstmr8q1ibg"]
 
-[ext_resource type="Script" path="res://pause_menu.gd" id="1_6ptk6"]
+[ext_resource type="Script" path="res://scripts/ui/pause_menu.gd" id="1_tuc01"]
 [ext_resource type="Texture2D" uid="uid://dkmfbekbl5suq" path="res://data/textures/PAUSEMENU.png" id="2_h53ld"]
 
 [node name="PauseMenu" type="Control"]
@@ -13,7 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("1_6ptk6")
+script = ExtResource("1_tuc01")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 2

@@ -1,0 +1,65 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://bgq7tl082jbo5"
+path="res://.godot/imported/coromandel.gltf-7ab690180b7df33669d703e74961fae2.scn"
+
+[deps]
+
+source_file="res://data/import/coromandel.gltf"
+dest_files=["res://.godot/imported/coromandel.gltf-7ab690180b7df33669d703e74961fae2.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name="Scene Root"
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"materials": {
+"coro_big": {
+"use_external/enabled": true,
+"use_external/path": "res://data/materials/world/coro_big.tres"
+},
+"coro_detailed": {
+"use_external/enabled": true,
+"use_external/path": "res://data/materials/world/coro_detailed.tres"
+}
+},
+"meshes": {
+"coromandel_EXPORT_ESRI_AERIAL_WM002": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://data/meshes/world/coromandel_EXPORT_ESRI_AERIAL_WM002.res"
+},
+"coromandel_EXPORT_ESRI_AERIAL_WM003": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://data/meshes/world/coromandel_EXPORT_ESRI_AERIAL_WM003.res"
+}
+}
+}
+gltf/embedded_image_handling=1

@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3]
+
+[ext_resource type="Texture2D" uid="uid://dw7g45auj71vm" path="res://data/textures/car/cardboard-texture-3.jpg" id="1_7lngn"]
+[ext_resource type="Texture2D" uid="uid://b5daw40nwkwho" path="res://data/import/Image.png" id="2_h2nl0"]
+
+[resource]
+resource_name = "Carbon"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_7lngn")
+metallic_texture = ExtResource("2_h2nl0")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_h2nl0")
+roughness_texture_channel = 1
