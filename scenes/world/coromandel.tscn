@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://chbq3ep3ohoc5"]
+[gd_scene load_steps=10 format=3 uid="uid://chbq3ep3ohoc5"]
 
 [ext_resource type="PackedScene" uid="uid://bgq7tl082jbo5" path="res://data/import/coromandel.gltf" id="1_6uyat"]
 [ext_resource type="PackedScene" uid="uid://ym5vyplb58u2" path="res://scenes/player.tscn" id="2_1dqdb"]
+[ext_resource type="Script" path="res://scripts/coromandel.gd" id="2_g5d84"]
 [ext_resource type="Texture2D" uid="uid://cyodrlmlc2c2e" path="res://data/textures/world/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="2_mdalq"]
 [ext_resource type="PackedScene" uid="uid://dnmuweaqihr68" path="res://scenes/corolla.tscn" id="3_s0rug"]
 
@@ -26,6 +27,7 @@ fog_sky_affect = 0.0
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5i3n5"]
 
 [node name="coromandel" instance=ExtResource("1_6uyat")]
+script = ExtResource("2_g5d84")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="0"]
 transform = Transform3D(-0.82523, -0.407157, -0.391432, 0.0024198, -0.695591, 0.718434, -0.564792, 0.591926, 0.575007, 0, 504.537, 0)

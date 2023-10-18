@@ -6,7 +6,7 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ob5th"]
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["Persist"]]
 script = ExtResource("1_iuav8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

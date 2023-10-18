@@ -66,6 +66,8 @@ func on_save_button_pressed(save_name: String) -> void:
 
 	var file = FileAccess.open("user://current_save.txt", FileAccess.WRITE)
 	#file.
+	if file == null: 
+		print("null")
 	file.store_line(save_name)
-	file.close()
-	get_tree().change_scene_to_file("res://scenes/world.tscn")
+	#file.close()
+	get_tree().change_scene_to_file("res://scenes/world/coromandel.tscn")
