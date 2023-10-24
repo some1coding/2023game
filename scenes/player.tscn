@@ -24,11 +24,10 @@ skeleton = NodePath("../Camera3D")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ScreenContainer" type="MarginContainer" parent="CanvasLayer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 98.0
+offset_bottom = 26.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/ScreenContainer"]
 layout_mode = 2
@@ -37,5 +36,5 @@ size_flags_vertical = 4
 
 [node name="InteractionPrompt" type="Label" parent="CanvasLayer/ScreenContainer/MarginContainer"]
 layout_mode = 2
-text = "E to enter
+text = "click to drive
 "

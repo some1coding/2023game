@@ -34,3 +34,8 @@ func load_game():
 		var node = get_node(node_data["node_path"]) 
 		print(node)
 		node.load(node_data)
+
+
+func _on_area_3d_body_entered(body):
+	if body.is_in_group("Player") or body.is_in_group("corolla"):
+		get_tree().change_scene_to_file("res://scenes/ui/ending.tscn")

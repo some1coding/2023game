@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bfa447jhvlf3e"
-path="res://.godot/imported/Salvation-Inspiring-Uplifting-Orchestra.mp3-40a54cf435eb679022dd9e50b3be7d11.mp3str"
+path="res://.godot/imported/Salvation-Inspiring-Uplifting-Orchestra.mp3-6ab6827cb34e95c1d3f7565a580be6c4.mp3str"
 
 [deps]
 
-source_file="res://data/audio/Salvation-Inspiring-Uplifting-Orchestra.mp3"
-dest_files=["res://.godot/imported/Salvation-Inspiring-Uplifting-Orchestra.mp3-40a54cf435eb679022dd9e50b3be7d11.mp3str"]
+source_file="res://data/Audio/Salvation-Inspiring-Uplifting-Orchestra.mp3"
+dest_files=["res://.godot/imported/Salvation-Inspiring-Uplifting-Orchestra.mp3-6ab6827cb34e95c1d3f7565a580be6c4.mp3str"]
 
 [params]
 
